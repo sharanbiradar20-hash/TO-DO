@@ -52,8 +52,3 @@ No build tools or `npm` commands are required!
 ### Browser Support
 Works in all modern browsers supporting ES6+ (Chrome, Firefox, Safari, Edge).
 
-## 🔮 Future Improvements
-
-- **Drag and Drop**: Reorder tasks using the HTML5 Drag and Drop API.
-- **Due Dates**: Add an optional date picker for tasks.
-- **Dark/Light Mode Toggle**: Persist user theme preference.
