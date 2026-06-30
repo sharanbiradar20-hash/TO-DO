@@ -2,7 +2,7 @@
 
 A production-ready, feature-rich To-Do List application built meticulously with native web technologies. Refactored for extreme performance, accessibility, and user experience.
 
-![Screenshot Placeholder](https://via.placeholder.com/800x450.png?text=Modern+To-Do+App+Preview)
+LIVE LINK : https://todo-app-xi-gray-45.vercel.app/
 
 ## ✨ Feature List
 
