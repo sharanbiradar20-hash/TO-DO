@@ -1,0 +1,600 @@
+:root {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: beige;
+    --main-color: black;
+    --card-bg: lightblue;
+    --danger-color: #ef4444;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: transparent;
+    color: var(--font-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Accessibility: Focus Styles */
+:focus-visible {
+    outline: 3px solid var(--input-focus);
+    outline-offset: 2px;
+}
+
+/* Stars Background Container */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#stars, #stars2, #stars3 {
+    background: transparent;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#stars {
+    width: 1px;
+    height: 1px;
+    box-shadow: 501px 811px #fff, 1450px 1324px #fff, 1093px 1780px #fff, 1469px 678px #fff, 904px 741px #fff, 1160px 781px #fff, 1841px 1962px #fff, 1630px 1667px #fff, 1788px 676px #fff, 367px 1734px #fff, 1343px 156px #fff;
+    animation: animStar 50s linear infinite;
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    box-shadow: 1925px 1320px #fff, 693px 1778px #fff, 1016px 711px #fff, 1171px 563px #fff, 661px 1919px #fff, 1610px 44px #fff;
+    animation: animStar 100s linear infinite;
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    box-shadow: 200px 981px #fff, 1731px 521px #fff, 132px 1039px #fff, 1888px 1547px #fff, 899px 1226px #fff;
+    animation: animStar 150s linear infinite;
+}
+
+@keyframes animStar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2000px); }
+}
+
+/* View Containers */
+.view-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ====================================================
+   UIVERSE SIGN-UP FORM & GENERAL NEO-BRUTALIST STYLES
+   ==================================================== */
+
+
+.input {
+    width: 100%;
+    height: 44px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 12px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+}
+
+.input:focus {
+    border: 2px solid var(--input-focus);
+}
+
+
+.button-confirm:active,
+.checkbox-container:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+}
+
+.button-confirm {
+    width: 130px;
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: all 0.1s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+}
+
+.button-confirm:hover {
+    background-color: #f7f7eb;
+}
+
+/* ====================================================
+   NEO-BRUTALIST TO-DO APP CONTAINER
+   ==================================================== */
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    background: var(--card-bg);
+    border: 2px solid var(--main-color);
+    box-shadow: 6px 6px var(--main-color);
+    border-radius: 5px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--font-color);
+}
+
+
+.task-inputs-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#todo-form {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.todo-input-field {
+    flex: 1;
+}
+
+.btn-add {
+    width: 44px;
+    height: 44px;
+    box-shadow: 4px 4px var(--main-color);
+}
+
+/* Custom Glitch Search Bar (Theme Integrated) */
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-input-field {
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+}
+
+.search-input-field:focus {
+    background-color: #010101;
+    color: #fff;
+    border-color: #d6d9dd;
+}
+
+.search-input-field:focus::placeholder {
+    color: #fff;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px) rotate(-3deg); }
+    50% { transform: translateX(4px) rotate(3deg); }
+    75% { transform: translateX(-4px) rotate(-3deg); }
+    100% { transform: translateX(0); }
+}
+
+.search-input-field:focus {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes glitch {
+    0%, 100%, 10%, 27%, 35%, 52%, 50%, 72%, 80% { transform: none; opacity: 1; }
+    7% { transform: skew(-1deg, -1deg); opacity: 0.8; }
+    30% { transform: skew(1deg, -0.5deg); opacity: 0.8; }
+    55% { transform: skew(-1.5deg, 0.5deg); opacity: 0.8; }
+    75% { transform: skew(0.8deg, 1.5deg); opacity: 0.8; }
+}
+
+.search-input-field:not(:placeholder-shown) {
+    animation: glitch 1.5s linear infinite;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.input-container::after {
+    content: "|";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    animation: blink 0.7s step-end infinite;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.input-container:focus-within::after {
+    color: #fff;
+}
+
+/* Filter Controls */
+.controls {
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    padding: 12px 0;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    flex: 1;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    color: var(--font-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 2px 2px var(--main-color);
+}
+
+.filter-btn:hover {
+    background-color: #f7f7eb;
+}
+
+.filter-btn.active {
+    background: #e2e2cc;
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(2px, 2px);
+}
+
+/* Task List */
+.todo-list {
+    list-style: none;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.todo-list::-webkit-scrollbar {
+    width: 6px;
+}
+.todo-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+.todo-list::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 3px 3px var(--main-color);
+    border-radius: 5px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+    animation: slideIn 0.25s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item.completed {
+    opacity: 0.7;
+    background: #e9e9db;
+}
+
+/* Checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.1s ease;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 2px 2px var(--main-color);
+}
+
+.todo-item.completed .checkbox-container {
+    background: var(--success-color);
+}
+
+.checkbox-icon {
+    opacity: 0;
+    color: white;
+    width: 14px;
+    height: 14px;
+    transition: opacity 0.1s ease;
+}
+
+.todo-item.completed .checkbox-icon {
+    opacity: 1;
+}
+
+/* Task Text & Edit Input */
+.task-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.task-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--font-color);
+    word-break: break-word;
+    cursor: pointer;
+}
+
+.todo-item.completed .task-text {
+    text-decoration: line-through;
+    color: var(--font-color-sub);
+}
+
+.edit-input {
+    background: white;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    color: var(--font-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    width: 100%;
+    outline: none;
+    display: none;
+}
+
+.todo-item.editing .task-text {
+    display: none;
+}
+
+.todo-item.editing .edit-input {
+    display: block;
+}
+
+/* Action Buttons (Edit & Delete) */
+.action-btn {
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    color: var(--font-color);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
+    box-shadow: 2px 2px var(--main-color);
+}
+
+.action-btn:hover {
+    background-color: #f7f7eb;
+}
+
+.btn-edit:active, .btn-delete:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(2px, 2px);
+}
+
+/* Empty State */
+.empty-state {
+    padding: 32px 16px;
+    text-align: center;
+    color: var(--font-color-sub);
+}
+
+.empty-state-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--font-color);
+}
+
+.empty-state .empty-state-sub {
+    font-size: 0.85rem;
+    color: var(--font-color-sub);
+    margin-top: 2px;
+}
+
+/* Footer Status */
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 2px solid var(--main-color);
+    font-size: 0.9rem;
+}
+
+.todo-count {
+    font-weight: 700;
+    color: var(--font-color);
+}
+
+.btn-clear {
+    width: 120px;
+    height: 32px;
+    font-size: 13px;
+    box-shadow: 2px 2px var(--main-color);
+}
+
+.btn-clear:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(2px, 2px);
+}
+
+/* Toasts */
+.toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.toast {
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    color: var(--font-color);
+    padding: 12px 16px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    animation: toastSlideIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.toast.toast-error {
+    background: #ffdddd;
+}
+.toast.toast-warning {
+    background: #fff3cd;
+}
+.toast.toast-info {
+    background: #d1ecf1;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.toast-action {
+    background: white;
+    border: 2px solid var(--main-color);
+    color: var(--font-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 2px 2px var(--main-color);
+}
+
+.toast-action:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(2px, 2px);
+}
+
+.toast-fade-out {
+    animation: toastFadeOut 0.2s ease forwards;
+}
+
+@keyframes toastSlideIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toastFadeOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(40px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .app-container {
+        padding: 16px;
+    }
+    .toast-container {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+    }
+    .toast {
+        min-width: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Brutalist Tasks</title>
+    <meta name="description" content="A production-quality Vanilla JS To-Do List application in Neo-Brutalist style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Star Background -->
+    <div class="stars-container" aria-hidden="true">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <!-- To-Do List Screen (Styled in matching Neo-Brutalist Theme) -->
+    <div id="todo-container" class="view-container">
+        <main class="app-container">
+            <header class="header">
+                <div class="header-top">
+                    <h1>Tasks</h1>
+                </div>
+                <p class="subtitle">Stay organized and productive.</p>
+            </header>
+            
+            <section class="task-inputs-section">
+                <form id="todo-form" aria-label="Add new task form">
+                    <input 
+                        type="text" 
+                        id="todo-input" 
+                        class="input todo-input-field" 
+                        placeholder="What needs to be done?" 
+                        aria-label="New task input"
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="button-confirm btn-add" aria-label="Add task">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Custom Glitch Search Bar (Themed) -->
+                <div class="input-container">
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        class="input search-input-field" 
+                        placeholder="Search tasks..." 
+                        aria-label="Search tasks"
+                        autocomplete="off"
+                    >
+                </div>
+            </section>
+
+            <section class="tasks-section" aria-label="Task List">
+                <!-- Filter controls -->
+                <div class="controls" aria-label="Task filters">
+                    <div class="filters" id="filters">
+                        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                        <button class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+                        <button class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state" class="empty-state hidden" aria-hidden="true">
+                    <div class="empty-state-icon">📋</div>
+                    <p>No tasks yet.</p>
+                    <p class="empty-state-sub">Add your first task.</p>
+                </div>
+
+                <!-- Task List Container -->
+                <ul id="todo-list" class="todo-list" aria-label="List of tasks">
+                    <!-- Tasks will be rendered here by JS -->
+                </ul>
+            </section>
+
+            <!-- Footer / Status Bar -->
+            <footer class="app-footer">
+                <span id="todo-count" class="todo-count" aria-live="polite">0 items left</span>
+                <button id="clear-completed" class="button-confirm btn-clear hidden">Clear completed</button>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container" aria-live="assertive"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
